@@ -8,10 +8,10 @@ import Image from "next/image";
 const IntroBox = () => {
   const LINE_NUM = Array.from({ length: 7 });
 
-  const [isShowIntro, setIsShowIntro] = useState(false);
+  const [isShowIntro, setIsShowIntro] = useState(true);
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center px-4">
-      <div className="w-full md:w-[768px] lg:w-[1024px] xl:w-[1280px] 2xl:w-[1600px] h-[800px] rounded-tl-3xl flex flex-col bg-[#1E1E1E]">
+    <div className="w-full min-h-screen flex flex-col justify-center items-center px-4">
+      <div className="w-full md:w-[768px] lg:w-[1024px] xl:w-[1280px] 2xl:w-[1600px] h-[800px] rounded-tl-3xl flex flex-col bg-bgGrey">
         <div className="h-[64px] flex">
           {isShowIntro && (
             <div className="w-[200px] pl-7 flex gap-3 justify-center items-center rounded-tl-3xl bg-[#1E1E1E]">

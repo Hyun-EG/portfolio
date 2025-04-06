@@ -23,6 +23,7 @@ body {
   background-image: url("/bg/main-bg.webp");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

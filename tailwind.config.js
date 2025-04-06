@@ -15,6 +15,10 @@ module.exports = {
         yellow: "#FFEA00",
         grey: "#5B5D68",
         green: "#6A9955",
+        bgGrey: "#1e1e1e",
+      },
+      fontSize: {
+        big: "2.75rem",
       },
     },
   },
