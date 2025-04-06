@@ -7,7 +7,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        customRed: "#ef4444",
+        sky: "#86A6C7",
+        orange: "#D88062",
+        blue: "#168CCB",
+        purple: "#C586C0",
+        olive: "#D2D8A6",
+        yellow: "#FFEA00",
+        grey: "#5B5D68",
       },
     },
   },
