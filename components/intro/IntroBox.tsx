@@ -30,7 +30,7 @@ const IntroBox = () => {
           <div className="flex flex-1 justify-end items-center bg-[#4E525F]">
             {isShowIntro && (
               <>
-                <span className="text-2xl">Run Code &gt;&gt;&gt; </span>
+                <span className="text-xl">Run Code &gt;&gt;&gt; </span>
                 <span className="px-10 text-3xl cursor-pointer">▷</span>
               </>
             )}
