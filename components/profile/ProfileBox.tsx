@@ -1,39 +1,28 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import Nav from "../nav/Nav";
+
+import { useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { showNav } from "@/features/nav/navSlice";
+import { observeNav } from "@/utils/observeNav";
+import NavBox from "../nav/NavBox";
 
 const ProfileBox = () => {
-  const navRef = useRef<HTMLDivElement | null>(null);
-  const [isShowNav, setIsShowNav] = useState(false);
+  const dispatch = useDispatch();
+  const navRef = useRef(null);
 
   useEffect(() => {
-    const target = navRef.current;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setIsShowNav(entry.isIntersecting);
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    if (target) {
-      observer.observe(target);
-    }
-
-    return () => {
-      if (target) {
-        observer.unobserve(target);
-      }
-      observer.disconnect();
-    };
-  }, []);
+    if (!navRef.current) return;
+    const cleanup = observeNav(navRef.current, 0.9, () => dispatch(showNav()));
+    return cleanup;
+  }, [dispatch]);
 
   return (
-    <div ref={navRef} className="w-full bg-black">
-      <Nav isVisible={isShowNav} />
-    </div>
+    <>
+      <NavBox />
+      <div ref={navRef} className="w-full min-h-screen bg-bgBlack text-white">
+        ProfileBox
+      </div>
+    </>
   );
 };
 
