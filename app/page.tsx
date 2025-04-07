@@ -1,12 +1,19 @@
 import IntroBox from "@/components/intro/IntroBox";
-import React from "react";
+import ProfileBox from "@/components/profile/ProfileBox";
+import ProjectBox from "@/components/project/ProjectBox";
+import EduBox from "@/components/education/EduBox";
+import OutroBox from "@/components/outro/OutroBox";
+import Nav from "@/components/nav/NavBox";
 
-const page = () => {
+export default function Home() {
   return (
-    <div>
+    <>
+      <Nav />
       <IntroBox />
-    </div>
+      <ProfileBox />
+      <ProjectBox />
+      <EduBox />
+      <OutroBox />
+    </>
   );
-};
-
-export default page;
+}
