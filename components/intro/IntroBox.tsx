@@ -1,20 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Code from "./Code";
 import iconVscode from "../../public/icon/logo-vscode.svg";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { hideNav } from "@/features/nav/navSlice";
+import { observeNav } from "@/utils/observeNav";
 
 const IntroBox = () => {
   const LINE_NUM = Array.from({ length: 7 });
-
   const [isShowIntro, setIsShowIntro] = useState(true);
+  const introRef = useRef(null);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!introRef.current) return;
+    const cleanup = observeNav(introRef.current, 0.1, () =>
+      dispatch(hideNav())
+    );
+    return cleanup;
+  }, [dispatch]);
+
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center px-4">
-      <div className="w-full md:w-[768px] lg:w-[1024px] xl:w-[1280px] 2xl:w-[1600px] h-[800px] rounded-tl-3xl flex flex-col bg-bgGrey">
+    <div
+      ref={introRef}
+      className="w-full h-screen flex flex-col justify-center items-center px-4"
+    >
+      <div className="w-full md:w-[768px] lg:w-[1024px] xl:w-[1280px] 2xl:w-[1600px] h-[800px] rounded-tl-3xl flex flex-col bg-bgBlack">
         <div className="h-[64px] flex">
           {isShowIntro && (
-            <div className="w-[200px] pl-7 flex gap-3 justify-center items-center rounded-tl-3xl bg-[#1E1E1E]">
+            <div className="w-[200px] pl-7 flex gap-3 justify-center items-center rounded-tl-3xl bg-bgBlack">
               <span className="text-2xl text-yellow">JS</span>
               <span className="text-2xl">intro.js</span>
               <span
