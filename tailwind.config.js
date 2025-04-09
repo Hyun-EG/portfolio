@@ -4,7 +4,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,ts,jsx,tsx}",
   ],
-  safelist: ["duration-[3000ms]"],
+  safelist: ["duration-[500ms]"],
   theme: {
     extend: {
       colors: {
