@@ -14,7 +14,14 @@ const NavBox = () => {
           : "opacity-0 pointer-events-none"
       }`}
     >
-      <span className="text-3xl cursor-pointer">Intro</span>
+      <span
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+        className="text-3xl cursor-pointer"
+      >
+        Intro
+      </span>
       <span className="text-3xl cursor-pointer">Profile</span>
       <span className="text-3xl cursor-pointer">Projects</span>
       <span className="text-3xl cursor-pointer">Educations</span>
