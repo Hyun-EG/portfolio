@@ -19,7 +19,10 @@ const ProfileBox = () => {
   return (
     <>
       <NavBox />
-      <div ref={navRef} className="w-full min-h-screen bg-bgBlack text-white">
+      <div
+        ref={navRef}
+        className="w-full min-h-screen pl-96 bg-bgBlack text-white"
+      >
         ProfileBox
       </div>
     </>

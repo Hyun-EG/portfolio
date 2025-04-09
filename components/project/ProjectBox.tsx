@@ -2,7 +2,7 @@
 
 const ProjectBox = () => {
   return (
-    <div className="w-full min-h-screen bg-neutral-800 text-white">
+    <div className="w-full min-h-screen pl-96 bg-neutral-800 text-white">
       ProjectBox
     </div>
   );
