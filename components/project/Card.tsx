@@ -1,0 +1,30 @@
+import React from "react";
+import { CardProps } from "@/types/cardProps";
+import Image from "next/image";
+
+const Card = ({ projectImg, projectName, projectDesc, badges }: CardProps) => {
+  return (
+    <div className="w-80 h-96 flex flex-col bg-neutral-800 rounded-3xl cursor-pointer">
+      <div className="h-40 w-full relative">
+        <Image
+          className="rounded-t-3xl object-cover"
+          src={projectImg}
+          alt={`${projectName}의 이미지입니다.`}
+          fill
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+      <div className="h-16 p-4">
+        <span className="text-2xl">{projectName}</span>
+      </div>
+      <div className="h-20 p-4">
+        <span>{projectDesc}</span>
+      </div>
+      <div className="h-20 p-4">
+        <span>{badges}</span>
+      </div>
+    </div>
+  );
+};
+
+export default Card;
