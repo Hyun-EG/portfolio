@@ -1,9 +1,94 @@
 "use client";
 
+import TitleBox from "../common/TitleBox";
+import Card from "./Card";
+import imgAircnc from "../../public/images/image-aircnc.webp";
+import imgDevtube from "../../public/images/image-devtube.webp";
+import imgIntranet from "../../public/images/image-intranet.webp";
+import imgKarb from "../../public/images/image-karb.webp";
+import imgSellweb from "../../public/images/image-sellweb.webp";
+import imgPpoppis from "../../public/images/image-ppoppis.webp";
+import Badge from "../common/Badge";
+
 const ProjectBox = () => {
   return (
-    <div className="w-full min-h-screen pl-96 bg-neutral-800 text-white">
-      ProjectBox
+    <div className="w-full min-h-screen pl-96 py-12 bg-bgBlack text-white">
+      <TitleBox>PROJECTS</TitleBox>
+      <div className="w-full flex flex-col px-12 py-4">
+        <div className="flex flex-wrap gap-4">
+          <Card
+            projectImg={imgSellweb}
+            projectName="Sellweb"
+            projectDesc="웹 템플릿 판매 사이트입니다."
+            badges={
+              <div className="flex items-center gap-1">
+                <Badge content="팀" color="blue" />
+                <Badge content="사이드" color="sky" />
+                <Badge content="FE" color="purple" />
+              </div>
+            }
+          />
+          <Card
+            projectImg={imgKarb}
+            projectName="KARB (한국광고 심의기관)"
+            projectDesc="광고심의사이트입니다."
+            badges={
+              <div className="flex items-center gap-1">
+                <Badge content="팀" color="blue" />
+                <Badge content="사이드" color="sky" />
+                <Badge content="PM UXUI Designer FE BE" color="purple" />
+              </div>
+            }
+          />
+          <Card
+            projectImg={imgAircnc}
+            projectName="Aircnc"
+            projectDesc="근처 숙박업소 예약사이트입니다."
+            badges={
+              <div className="flex items-center gap-1">
+                <Badge content="팀" color="blue" />
+                <Badge content="사이드" color="sky" />
+                <Badge content="FE BE" color="purple" />
+              </div>
+            }
+          />
+          <Card
+            projectImg={imgDevtube}
+            projectName="Devtube"
+            projectDesc="youtube 스튜디오 사이트입니다."
+            badges={
+              <div className="flex items-center gap-1">
+                <Badge content="팀" color="blue" />
+                <Badge content="사이드" color="sky" />
+                <Badge content="FE" color="purple" />
+              </div>
+            }
+          />
+          <Card
+            projectImg={imgIntranet}
+            projectName="Intranet"
+            projectDesc="인트라넷 사이트입니다"
+            badges={
+              <div className="flex items-center gap-1">
+                <Badge content="팀" color="blue" />
+                <Badge content="토이" color="orange" />
+                <Badge content="FE" color="purple" />
+              </div>
+            }
+          />
+          <Card
+            projectImg={imgPpoppis}
+            projectName="뽀삐스"
+            projectDesc="저만의 쟈비스입니다."
+            badges={
+              <div className="flex items-center gap-1">
+                <Badge content="개인" color="olive" />
+                <Badge content="토이" color="orange" />
+              </div>
+            }
+          />
+        </div>
+      </div>
     </div>
   );
 };

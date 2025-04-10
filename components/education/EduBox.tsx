@@ -18,7 +18,7 @@ const EducationBox = () => {
   return (
     <div
       ref={eduRef}
-      className="w-full min-h-screen pl-96 bg-white text-black flex justify-center items-center"
+      className="w-full min-h-screen pl-96 bg-bgBlack text-black flex justify-center items-center"
     >
       EducationBox
     </div>
