@@ -144,12 +144,6 @@ const ProfileBox = () => {
                     className="w-1/2 h-12 p-6 rounded-xl bg-white flex gap-8 items-center justify-center text-black"
                   >
                     <Image
-                      onMouseEnter={() => {
-                        setIsColorMe(true);
-                      }}
-                      onMouseLeave={() => {
-                        setIsColorMe(false);
-                      }}
                       className="w-10"
                       src={item.img}
                       alt={`${item.title}의 이미지`}
