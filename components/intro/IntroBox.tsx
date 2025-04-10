@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Code from "./Code";
-import iconVscode from "../../public/icon/logo-vscode.svg";
+import iconVscode from "../../public/icons/logo-vscode.svg";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { hideNav } from "@/features/nav/navSlice";
