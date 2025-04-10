@@ -11,19 +11,19 @@ import Image from "next/image";
 //images
 import imgMe from "../../public/images/image-me.png";
 import imgMeColor from "../../public/images/image-me-color.jpg";
-import iconGithub from "../../public/icon/icon-github.svg";
-import iconMail from "../../public/icon/icon-email.svg";
-import iconHuman from "../../public/icon/icon-human.svg";
-import iconJs from "../../public/icon/icon-javascript.svg";
-import iconTs from "../../public/icon/icon-typescript.svg";
-import iconHtml from "../../public/icon/icon-html.svg";
-import iconCss from "../../public/icon/icon-css.svg";
-import iconReact from "../../public/icon/icon-react.svg";
-import iconNext from "../../public/icon/icon-next.svg";
-import iconNode from "../../public/icon/icon-nodejs.svg";
-import iconGit from "../../public/icon/icon-git.svg";
-import iconSass from "../../public/icon/icon-sass.svg";
-import iconJest from "../../public/icon/icon-jest.svg";
+import iconGithub from "../../public/icons/icon-github.svg";
+import iconMail from "../../public/icons/icon-email.svg";
+import iconHuman from "../../public/icons/icon-human.svg";
+import iconJs from "../../public/icons/icon-javascript.svg";
+import iconTs from "../../public/icons/icon-typescript.svg";
+import iconHtml from "../../public/icons/icon-html.svg";
+import iconCss from "../../public/icons/icon-css.svg";
+import iconReact from "../../public/icons/icon-react.svg";
+import iconNext from "../../public/icons/icon-next.svg";
+import iconNode from "../../public/icons/icon-nodejs.svg";
+import iconGit from "../../public/icons/icon-git.svg";
+import iconSass from "../../public/icons/icon-sass.svg";
+import iconJest from "../../public/icons/icon-jest.svg";
 
 const ProfileBox = () => {
   const contactArr = [
