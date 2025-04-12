@@ -9,11 +9,13 @@ import imgKarb from "../../public/images/image-karb.webp";
 import imgSellweb from "../../public/images/image-sellweb.webp";
 import imgPpoppis from "../../public/images/image-ppoppis.webp";
 import Badge from "../common/Badge";
+import ProjectModal from "./ProjectModal";
 
 const ProjectBox = () => {
   return (
     <div className="w-full min-h-screen pl-96 py-12 bg-bgBlack text-white">
       <TitleBox>PROJECTS</TitleBox>
+      <ProjectModal />
       <div className="w-full flex flex-col px-12 py-4">
         <div className="flex flex-wrap gap-4">
           <Card
