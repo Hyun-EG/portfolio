@@ -1,10 +1,16 @@
 import React from "react";
 import { CardProps } from "@/types/cardProps";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { showModal } from "@/features/project/projectSlice";
 
 const Card = ({ projectImg, projectName, projectDesc, badges }: CardProps) => {
+  const dispatch = useDispatch();
   return (
-    <div className="w-80 h-96 flex flex-col bg-neutral-800 rounded-3xl cursor-pointer">
+    <div
+      onClick={() => dispatch(showModal())}
+      className="w-80 h-96 flex flex-col bg-neutral-800 rounded-3xl cursor-pointer"
+    >
       <div className="h-40 w-full relative">
         <Image
           className="rounded-t-3xl object-cover"
