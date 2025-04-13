@@ -18,7 +18,13 @@ const ProjectModal = () => {
 
   const data = selectedProject ? projectData[selectedProject] : null;
 
-  const [isShowSkillContent, setIsShowSkillContent] = useState(false);
+  const [openSkills, setOpenSkills] = useState<boolean[]>([]);
+
+  useEffect(() => {
+    if (data) {
+      setOpenSkills(new Array(data.skills.length).fill(false));
+    }
+  }, [data]);
 
   useEffect(() => {
     if (isShowModal) {
@@ -34,6 +40,14 @@ const ProjectModal = () => {
       document.documentElement.style.overflow = "auto";
     };
   }, [isShowModal]);
+
+  const toggleSkill = (index: number) => {
+    setOpenSkills((prev) => {
+      const updated = [...prev];
+      updated[index] = !updated[index];
+      return updated;
+    });
+  };
 
   return isShowModal && data ? (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center text-black overflow-scroll overflow-x-hidden">
@@ -94,19 +108,21 @@ const ProjectModal = () => {
             <span className="font-bold text-2xl">기술 및 스택</span>
             <div>
               {data.skills.map((item, index) => (
-                <div key={index} className="mb-2 flex gap-1">
-                  <div className="font-bold">
-                    <span
-                      className="cursor-pointer select-none"
-                      onClick={() => {
-                        setIsShowSkillContent((prev) => (prev ? false : true));
-                      }}
-                    >
-                      ▶
+                <div key={index} className="mb-2">
+                  <div
+                    className="font-bold cursor-pointer select-none"
+                    onClick={() => toggleSkill(index)}
+                  >
+                    <span className="inline-block w-4">
+                      {openSkills[index] ? "⯆" : "⯈"}
                     </span>
-                    {item.skill}
+                    <span className="pl-1">{item.skill}</span>
                   </div>
-                  <div>{isShowSkillContent && item.content}</div>
+                  {openSkills[index] && (
+                    <div className="pl-6 pt-1 text-sm text-gray-700">
+                      {item.content}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
