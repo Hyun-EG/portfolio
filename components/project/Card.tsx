@@ -4,11 +4,23 @@ import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { showModal } from "@/features/project/projectSlice";
 
-const Card = ({ projectImg, projectName, projectDesc, badges }: CardProps) => {
+const Card = ({
+  projectImg,
+  projectName,
+  projectDesc,
+  badges,
+  onClick,
+}: CardProps) => {
   const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(showModal());
+    if (onClick) {
+      onClick();
+    }
+  };
   return (
     <div
-      onClick={() => dispatch(showModal())}
+      onClick={handleClick}
       className="w-80 h-96 flex flex-col bg-neutral-800 rounded-3xl cursor-pointer"
     >
       <div className="h-40 w-full relative">
