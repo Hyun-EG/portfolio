@@ -5,4 +5,5 @@ export type CardProps = {
   projectName: string;
   projectDesc: string;
   badges: React.ReactNode;
+  onClick?: () => void;
 };

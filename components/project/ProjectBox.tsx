@@ -10,8 +10,16 @@ import imgSellweb from "../../public/images/image-sellweb.webp";
 import imgPpoppis from "../../public/images/image-ppoppis.webp";
 import Badge from "../common/Badge";
 import ProjectModal from "./ProjectModal";
+import { useDispatch } from "react-redux";
+import { setSelectedProject } from "../../features/selectedProject/selectedProjectSlice";
 
 const ProjectBox = () => {
+  const dispatch = useDispatch();
+
+  const handleCardClick = (projectName: string) => {
+    dispatch(setSelectedProject(projectName));
+  };
+
   return (
     <div className="w-full min-h-screen pl-96 py-12 bg-bgBlack text-white">
       <TitleBox>PROJECTS</TitleBox>
@@ -29,6 +37,7 @@ const ProjectBox = () => {
                 <Badge content="FE" color="purple" />
               </div>
             }
+            onClick={() => handleCardClick("sellweb")}
           />
           <Card
             projectImg={imgKarb}
@@ -37,10 +46,11 @@ const ProjectBox = () => {
             badges={
               <div className="flex items-center gap-1">
                 <Badge content="팀" color="blue" />
-                <Badge content="사이드" color="sky" />
+                <Badge content="기업연계" color="sky" />
                 <Badge content="PM UXUI Designer FE BE" color="purple" />
               </div>
             }
+            onClick={() => handleCardClick("karb")}
           />
           <Card
             projectImg={imgAircnc}
@@ -53,6 +63,7 @@ const ProjectBox = () => {
                 <Badge content="FE BE" color="purple" />
               </div>
             }
+            onClick={() => handleCardClick("aircnc")}
           />
           <Card
             projectImg={imgDevtube}
@@ -65,6 +76,7 @@ const ProjectBox = () => {
                 <Badge content="FE" color="purple" />
               </div>
             }
+            onClick={() => handleCardClick("devtube")}
           />
           <Card
             projectImg={imgIntranet}
@@ -77,6 +89,7 @@ const ProjectBox = () => {
                 <Badge content="FE" color="purple" />
               </div>
             }
+            onClick={() => handleCardClick("intranet")}
           />
           <Card
             projectImg={imgPpoppis}
@@ -88,6 +101,7 @@ const ProjectBox = () => {
                 <Badge content="토이" color="orange" />
               </div>
             }
+            onClick={() => handleCardClick("ppoppis")}
           />
         </div>
       </div>
