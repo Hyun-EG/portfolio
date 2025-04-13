@@ -9,7 +9,6 @@ import TitleBox from "../common/TitleBox";
 import Image from "next/image";
 
 //images
-import imgMe from "../../public/images/image-me.png";
 import imgMeColor from "../../public/images/image-me-color.jpg";
 import iconGithub from "../../public/icons/icon-github.svg";
 import iconMail from "../../public/icons/icon-email.svg";
@@ -93,7 +92,6 @@ const ProfileBox = () => {
 
   const [isMounted, setIsMounted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isColorMe, setIsColorMe] = useState(false);
 
   const [skillAchievement, setSkillAchievement] = useState(
     "스킬 이미지에 마우스를 올려주세요."
@@ -125,17 +123,7 @@ const ProfileBox = () => {
                   isVisible ? "opacity-100" : "opacity-0"
                 } `}
               >
-                <Image
-                  onMouseEnter={() => {
-                    setIsColorMe(true);
-                  }}
-                  onMouseLeave={() => {
-                    setIsColorMe(false);
-                  }}
-                  className="w-64 h-72"
-                  src={isColorMe ? imgMeColor : imgMe}
-                  alt="나의 사진"
-                />
+                <Image className="w-64 h-72" src={imgMeColor} alt="나의 사진" />
               </div>
               <div className="flex-1 flex flex-col justify-center items-center gap-4">
                 {contactArr.map((item, index) => (
