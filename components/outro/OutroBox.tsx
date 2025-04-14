@@ -20,9 +20,13 @@ const OutroBox = () => {
   return (
     <div
       ref={outroRef}
-      className="w-full min-h-screen bg-bgBlack text-white flex justify-center items-center"
+      className={`w-full min-h-screen bg-bgBlack text-white flex`}
     >
-      OutroBox
+      <div className="w-1/2 p-24 border-r">
+        <div className="text-9xl text-start">Thank You</div>
+        <div className="text-9xl text-end">For Visiting.</div>
+      </div>
+      <div className="w-1/2 p-24"></div>
     </div>
   );
 };
