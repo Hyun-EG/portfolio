@@ -1,5 +1,6 @@
 // projectDataType.ts
 export interface ProjectItem {
+  mainColor: string;
   title: string;
   description: string;
   date: string;
@@ -14,7 +15,10 @@ export interface ProjectItem {
     skill: string;
     content: string;
   }[];
-  contribution: string;
+  contribution: {
+    title: string;
+    content: string[];
+  }[];
 }
 
 export type ProjectDataType = {
