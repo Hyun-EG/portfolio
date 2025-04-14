@@ -19,10 +19,12 @@ const ProjectModal = () => {
   const data = selectedProject ? projectData[selectedProject] : null;
 
   const [openSkills, setOpenSkills] = useState<boolean[]>([]);
+  const [openContribution, setOpenContribution] = useState<boolean[]>([]);
 
   useEffect(() => {
     if (data) {
       setOpenSkills(new Array(data.skills.length).fill(false));
+      setOpenContribution(new Array(data.contribution.length).fill(true));
     }
   }, [data]);
 
@@ -49,8 +51,16 @@ const ProjectModal = () => {
     });
   };
 
+  const toggleContribution = (index: number) => {
+    setOpenContribution((prev) => {
+      const updated = [...prev];
+      updated[index] = !updated[index];
+      return updated;
+    });
+  };
+
   return isShowModal && data ? (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center text-black overflow-scroll overflow-x-hidden">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-start text-black overflow-scroll overflow-x-hidden">
       <div className="absolute top-12 right-24 flex flex-col gap-4">
         <div className="w-12 h-12 flex justify-center items-center rounded-full bg-bgBlack cursor-pointer">
           <span
@@ -64,8 +74,11 @@ const ProjectModal = () => {
           <Image className="w-12 h-12" src={iconGithub} alt="깃허브 아이콘" />
         </div>
       </div>
-      <div className="w-full h-full flex flex-col mx-64 bg-white rounded-lg shadow-xl">
-        <div className="py-8 text-center bg-blue rounded-t-lg">
+      <div className="w-full h-auto flex flex-col mx-64 pb-12 bg-white rounded-lg shadow-xl">
+        <div
+          className="py-8 text-center rounded-t-lg"
+          style={{ backgroundColor: data.mainColor }}
+        >
           <span className="text-white text-3xl">{data.title}</span>
         </div>
         <div className="h-full px-44">
@@ -105,12 +118,14 @@ const ProjectModal = () => {
             </div>
           </div>
           <div className="py-2">
-            <span className="font-bold text-2xl">기술 및 스택</span>
+            <div className="pb-2">
+              <span className="font-bold text-2xl">기술 및 스택</span>
+            </div>
             <div>
               {data.skills.map((item, index) => (
                 <div key={index} className="mb-2">
                   <div
-                    className="font-bold cursor-pointer select-none"
+                    className="p-1 cursor-pointer select-none bg-[#f2f2f2] hover:bg-[#bebebe]"
                     onClick={() => toggleSkill(index)}
                   >
                     <span className="inline-block w-4">
@@ -119,7 +134,7 @@ const ProjectModal = () => {
                     <span className="pl-1">{item.skill}</span>
                   </div>
                   {openSkills[index] && (
-                    <div className="pl-6 pt-1 text-sm text-gray-700">
+                    <div className="pt-1 pl-6 text-base text-gray-700">
                       {item.content}
                     </div>
                   )}
@@ -128,8 +143,32 @@ const ProjectModal = () => {
             </div>
           </div>
           <div className="py-2">
-            <span className="font-bold text-2xl">기여도</span>
-            <div>{data.contribution}</div>
+            <div className="pb-2">
+              <span className="font-bold text-2xl">기여도</span>
+            </div>
+            <div>
+              {data.contribution.map((item, index) => (
+                <div key={index}>
+                  <div
+                    onClick={() => {
+                      toggleContribution(index);
+                    }}
+                    className="p-1 font-bold cursor-pointer select-none bg-[#f2f2f2] hover:bg-[#bebebe]"
+                  >
+                    {item.title}
+                  </div>
+                  <div>
+                    {openContribution[index] &&
+                      item.content.map((item, index) => (
+                        <div key={index}>
+                          <span className="select-none pr-1">•</span>
+                          {item}
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
