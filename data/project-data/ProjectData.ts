@@ -26,6 +26,10 @@ export const projectData: ProjectDataType = {
         skill: "React",
         content: "정말 열심히 했어요",
       },
+      {
+        skill: "Next",
+        content: "정말 열심히 했어요",
+      },
     ],
     contribution: "",
   },
