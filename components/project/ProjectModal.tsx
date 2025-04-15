@@ -96,13 +96,7 @@ const ProjectModal = () => {
             </div>
           </div>
           <div className="py-4">
-            <Swiper
-              images={[
-                { img: data.images.img1 },
-                { img: data.images.img2 },
-                { img: data.images.img3 },
-              ]}
-            />
+            <Swiper images={data.images} />
           </div>
           <div className="py-2">
             <div className="pb-2">
@@ -150,9 +144,7 @@ const ProjectModal = () => {
               {data.contribution.map((item, index) => (
                 <div key={index}>
                   <div
-                    onClick={() => {
-                      toggleContribution(index);
-                    }}
+                    onClick={() => toggleContribution(index)}
                     className="p-1 font-bold cursor-pointer select-none bg-[#f2f2f2] hover:bg-[#bebebe]"
                   >
                     {item.title}
