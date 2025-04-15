@@ -10,9 +10,10 @@ import { showModal } from "@/features/detailImageModal/detailImageModalSlice";
 const Swiper = ({ images }: SwiperProps) => {
   const [startIndex, setStartIndex] = useState(0);
   const [currentLastIndex, setCurrentLastIndex] = useState(3);
-  const [updateArr, setUpdateArr] = useState<{ img: string }[]>([]);
+  const [updateArr, setUpdateArr] = useState<string[]>([]);
   const [prevDisabled, setPrevDisabled] = useState(false);
   const [lastDisabled, setLastDisabled] = useState(false);
+
   const imageArr = useMemo(() => images, [images]);
   const lastIndex = imageArr.length;
 
@@ -32,17 +33,13 @@ const Swiper = ({ images }: SwiperProps) => {
   }, [startIndex, currentLastIndex, imageArr]);
 
   const prevPaging = () => {
-    if (startIndex <= 0) {
-      return;
-    }
+    if (startIndex <= 0) return;
     setStartIndex((prev) => prev - 1);
     setCurrentLastIndex((prev) => prev - 1);
   };
 
   const lastPaging = () => {
-    if (currentLastIndex >= lastIndex) {
-      return;
-    }
+    if (currentLastIndex >= lastIndex) return;
     setStartIndex((prev) => prev + 1);
     setCurrentLastIndex((prev) => prev + 1);
   };
@@ -52,18 +49,16 @@ const Swiper = ({ images }: SwiperProps) => {
       {isVisible && <DetailImgModal />}
       <span
         onClick={prevPaging}
-        className={`text-3xl ${
+        className={`text-3xl select-none ${
           prevDisabled ? "text-gray-400" : "cursor-pointer"
         }`}
       >
         ◀
       </span>
-      {updateArr.map((item, index) => (
+      {updateArr.map((img, index) => (
         <Image
-          onClick={() => {
-            dispatch(showModal(item.img));
-          }}
-          src={item.img}
+          onClick={() => dispatch(showModal(img))}
+          src={img}
           alt="이미지"
           key={index}
           width={260}
@@ -73,7 +68,7 @@ const Swiper = ({ images }: SwiperProps) => {
       ))}
       <span
         onClick={lastPaging}
-        className={`text-3xl ${
+        className={`text-3xl select-none ${
           lastDisabled ? "text-gray-400" : "cursor-pointer"
         }`}
       >
