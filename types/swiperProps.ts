@@ -1,3 +1,3 @@
 export interface SwiperProps {
-  images: { img: string }[];
+  images: string[];
 }

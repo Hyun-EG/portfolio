@@ -9,7 +9,7 @@ import TitleBox from "../common/TitleBox";
 import Image from "next/image";
 
 //images
-import imgMeColor from "../../public/images/image-me-color.jpg";
+import imgMe from "../../public/images/image-me.png";
 import iconGithub from "../../public/icons/icon-github.svg";
 import iconMail from "../../public/icons/icon-email.svg";
 import iconHuman from "../../public/icons/icon-human.svg";
@@ -59,7 +59,7 @@ const ProfileBox = () => {
                   isVisible ? "opacity-100" : "opacity-0"
                 } `}
               >
-                <Image className="w-64 h-72" src={imgMeColor} alt="나의 사진" />
+                <Image className="w-64 h-72" src={imgMe} alt="나의 사진" />
               </div>
               <div className="flex-1 flex flex-col justify-center items-center gap-4">
                 {contactArr.map((item, index) => (
