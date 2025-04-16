@@ -144,7 +144,7 @@ export const projectData: ProjectDataType = {
           "자바스크립트 기반의 UI 라이브러리로, 컴포넌트 단위의 재사용 가능한 인터페이스를 구성할 수 있습니다.",
       },
       {
-        skill: "Redux",
+        skill: "Redux-toolkit",
         content:
           "상태 관리를 위한 라이브러리로, 전역 상태를 효율적으로 관리하고 컴포넌트 간 데이터 흐름을 명확히 했습니다.",
       },
@@ -222,7 +222,7 @@ export const projectData: ProjectDataType = {
     mainColor: "#FF385C",
     title: "Aircnc",
     description:
-      "에어비엔비를 레퍼런스로 참고하여 제작한 커스텀 에어씨엔씨입니다. .지역 입력을 통한 근처 숙소 예약 기능 제공합니다",
+      "에어비엔비를 레퍼런스로 참고하여 제작한 커스텀 에어씨엔씨입니다. 선택한 지역의 근처 숙소 예약 기능 제공합니다.",
     date: "2024.06.17 ~ 2024.07.07",
     team: "FE 3명 BE 4명",
     images: [
@@ -234,7 +234,12 @@ export const projectData: ProjectDataType = {
       "/images/projects/aircnc/image-reser-list.webp",
       "/images/projects/aircnc/image-wish.webp",
     ],
-    keyFeatures: [""],
+    keyFeatures: [
+      "로그인 / 회원가입",
+      "설정한 지역 기반 근처 숙소 제공",
+      "현위치 기반 근처 숙소 제공",
+      "숙소 예약기능, 구매내역, 위시리스트",
+    ],
     skills: [
       {
         skill: "Vite",
@@ -247,7 +252,7 @@ export const projectData: ProjectDataType = {
           "컴포넌트 기반 UI 라이브러리로, 재사용성과 유지보수가 뛰어난 인터페이스를 구축했습니다.",
       },
       {
-        skill: "Redux",
+        skill: "Redux-toolkit",
         content:
           "전역 상태 관리를 통해 복잡한 상태 로직을 체계적으로 관리하고, 예측 가능한 데이터 흐름을 구현했습니다.",
       },
@@ -271,13 +276,35 @@ export const projectData: ProjectDataType = {
         content:
           "Git hook 설정을 통해 커밋 전 lint 검사 및 포맷팅을 자동화하여 코드 일관성과 품질을 유지했습니다.",
       },
+      {
+        skill: "Zod",
+        content:
+          "스키마 기반의 데이터 유효성 검증 라이브러리로, 폼 입력 및 API 응답 데이터를 타입 안전하게 검증하고 처리했습니다.",
+      },
     ],
 
     contribution: [
       {
-        title: "디자인 시안 제작 및 UI 설계",
+        title: "지도 기반 위치 서비스 구현",
+        content: ["Geolocation API로 사용자 현위치를 추적하고 근처 숙소 제공"],
+      },
+      {
+        title: "카카오 맵 마커 및 상세정보 커스텀",
         content: [
-          "Figma를 활용해 전체 디자인 시안을 총괄하고, 공통 컴포넌트를 분리하여 일관된 UI를 설계했습니다.",
+          "카카오 맵의 마커 색상과 정보창 스타일을 커스터마이징하여 브랜드 톤에 맞는 시각적 요소로 구성하고, 사용자에게 직관적인 위치 정보를 제공했습니다.",
+        ],
+      },
+      {
+        title: "UI 커스터마이징 및 반응형 설계",
+        content: [
+          "React Calendar를 활용해 커스텀 캘린더 UI를 구성하고, 미디어 쿼리 기반 반응형 레이아웃으로 다양한 디바이스에 최적화된 화면을 구현했습니다.",
+          "화면 크기에 따라 헤더와 네비게이션의 동작을 유동적으로 설정하여 사용자 경험을 개선했습니다.",
+        ],
+      },
+      {
+        title: "숙소 리스트 렌더링 최적화",
+        content: [
+          "지도 마커 렌더링과 동시에 발생하는 성능 저하를 방지하기 위해, 숙소 데이터를 10개씩 불러오는 무한 스크롤 방식으로 최적화했습니다.",
         ],
       },
     ],
@@ -286,7 +313,7 @@ export const projectData: ProjectDataType = {
     mainColor: "#F90103",
     title: "Devtube",
     description:
-      "외주 개발 사기이슈가 많아서 미리 만들어놓고 파는 템플릿 사이트를 만들어봤습니다",
+      "유튜브 크리에이터를 위한 채널 관리 플랫폼입니다. 시스템 오류로 인한 정정 신청, 문의 접수는 물론 스케줄 관리와 수익 내역 확인 기능을 제공합니다.",
     date: "2024.05.27 ~ 2024.06.09",
     team: "FE 4명",
     images: [
@@ -299,18 +326,73 @@ export const projectData: ProjectDataType = {
       "/images/projects/devtube/image-calendar.webp",
       "/images/projects/devtube/image-revenue-list.webp",
     ],
-    keyFeatures: [""],
+    keyFeatures: [
+      "로그인 / 회원가입 / 아이디 찾기 / 비밀번호 찾기",
+      "채널 정보 수정",
+      "스케줄 관리",
+      "문의 기능",
+      "수익 내역 시각화",
+    ],
     skills: [
       {
+        skill: "Vite",
+        content:
+          "빠른 번들링과 핫 리로딩을 지원하는 프론트엔드 빌드 도구로, 개발 환경을 빠르게 구성할 수 있습니다.",
+      },
+      {
         skill: "React",
-        content: "정말 열심히 했어요",
+        content:
+          "자바스크립트 기반의 UI 라이브러리로, 컴포넌트 단위의 재사용 가능한 인터페이스를 구성할 수 있습니다.",
+      },
+      {
+        skill: "Firebase",
+        content:
+          "구글에서 제공하는 백엔드 서비스 플랫폼으로, 인증, 데이터베이스, 스토리지 등을 쉽게 연동할 수 있습니다.",
+      },
+      {
+        skill: "Redux Toolkit",
+        content:
+          "리덕스 상태 관리를 더 쉽고 효율적으로 구성할 수 있게 도와주는 공식 도구 모음입니다.",
+      },
+      {
+        skill: "Sass",
+        content:
+          "CSS 전처리기로, 변수, 중첩, 믹스인 등 코드 재사용성과 가독성을 높이는 기능을 제공합니다.",
       },
     ],
     contribution: [
       {
-        title: "디자인 시안 제작 및 UI 설계",
+        title: "Firebase를 활용한 인증 기능 구현",
         content: [
-          "Figma를 활용해 전체 디자인 시안을 총괄하고, 공통 컴포넌트를 분리하여 일관된 UI를 설계했습니다.",
+          "Firebase Authentication을 활용하여 회원가입, 로그인, 아이디/비밀번호 찾기 기능을 구현",
+          "에러 처리 및 입력값 유효성 검사를 통해 안정적인 사용자 경험 제공",
+        ],
+      },
+      {
+        title: "공통 레이아웃 구성 및 사이드바/헤더 구현",
+        content: [
+          "프로젝트 전체에 공통으로 적용되는 사이드바 및 헤더 컴포넌트를 설계 및 구현",
+        ],
+      },
+      {
+        title: "대시보드 내 커스텀 미니 캘린더 기능 구현",
+        content: [
+          "외부 캘린더 라이브러리를 사용하지 않고 직접 캘린더 로직 및 UI를 구현",
+          "스케줄 데이터를 연동하여 빠른 주간 일정 확인 가능하도록 개발",
+        ],
+      },
+      {
+        title: "react-youtube를 활용한 채널 콘텐츠 연동",
+        content: [
+          "react-youtube 라이브러리를 활용하여 유튜브 채널 영상 출력 기능 구현",
+          "API를 통해 채널 ID 기반 영상 데이터를 받아와 출력",
+        ],
+      },
+      {
+        title: "채널 정보 수정 기능 구현",
+        content: [
+          "사용자가 자신의 유튜브 채널 정보를 수정할 수 있는 UI 및 로직을 구현",
+          "입력값 변경 후 저장 기능과 관련 에러 처리 포함",
         ],
       },
     ],
@@ -319,8 +401,8 @@ export const projectData: ProjectDataType = {
     mainColor: "#ED234B",
     title: "Intranet",
     description:
-      "외주 개발 사기이슈가 많아서 미리 만들어놓고 파는 템플릿 사이트를 만들어봤습니다",
-    date: "2025/01/07 ~ 진행중",
+      "부트캠프 수강생들이 출석 시스템에서 겪는 불편함을 해소하고자 만든 토이 프로젝트입니다. 수강생 입장에서 ‘이런 서비스가 있으면 좋겠다’는 마음으로 기획하고 제작한 컨셉 기반의 웹 애플리케이션입니다.",
+    date: "2024.04.08 ~ 2024.04.21",
     team: "FE 4명",
     images: [
       "/images/projects/intranet/image-login.webp",
@@ -331,18 +413,53 @@ export const projectData: ProjectDataType = {
       "/images/projects/intranet/image-notice.webp",
       "/images/projects/intranet/image-resource-list.webp",
     ],
-    keyFeatures: [""],
+    keyFeatures: [
+      "로그인 / 회원가입",
+      "입실 / 퇴실 기능",
+      "개인정보 수정",
+      "휴가 / 조퇴 / 외출 신청 기능",
+      "공지사항 및 자료실",
+    ],
     skills: [
       {
+        skill: "Vite",
+        content:
+          "빠른 번들링과 핫 리로딩을 지원하는 프론트엔드 빌드 도구로, 개발 환경의 생산성과 속도를 높일 수 있습니다.",
+      },
+      {
         skill: "React",
-        content: "정말 열심히 했어요",
+        content:
+          "컴포넌트 기반의 UI 라이브러리로, 재사용 가능한 인터페이스 구현과 상태 관리를 효율적으로 할 수 있습니다.",
+      },
+      {
+        skill: "Firebase",
+        content:
+          "인증, 데이터베이스, 스토리지 등 다양한 백엔드 기능을 제공하는 플랫폼으로, 빠르게 서버 기능을 구축할 수 있습니다.",
+      },
+      {
+        skill: "Sass",
+        content:
+          "CSS 전처리기로, 중첩, 변수, 믹스인 등을 활용해 더 구조적이고 재사용성 높은 스타일을 작성할 수 있습니다.",
       },
     ],
     contribution: [
       {
-        title: "디자인 시안 제작 및 UI 설계",
+        title: "사이드바 구현 및 현재 위치 표시",
         content: [
-          "Figma를 활용해 전체 디자인 시안을 총괄하고, 공통 컴포넌트를 분리하여 일관된 UI를 설계했습니다.",
+          "사이드바 컴포넌트 구현",
+          "옆에 슬라이드바를 추가하여 애니메이션 효과로 현위치 표시",
+        ],
+      },
+      {
+        title: "공지사항 기능 구현 및 디테일 페이지 추가",
+        content: [
+          "공지사항 목록을 구현하고, 각 공지사항 클릭 시 디테일 페이지로 이동하는 기능 구현",
+        ],
+      },
+      {
+        title: "자료실 스와이퍼 기능 구현",
+        content: [
+          "Swiper 라이브러리를 사용하여 다양한 자료를 손쉽게 탐색할 수 있도록 개발",
         ],
       },
     ],
@@ -351,26 +468,66 @@ export const projectData: ProjectDataType = {
     mainColor: "#020202",
     title: "PPOPPIS",
     description:
-      "외주 개발 사기이슈가 많아서 미리 만들어놓고 파는 템플릿 사이트를 만들어봤습니다",
+      "저만의 쟈비스가 필요하여 과거에 키우던 뽀삐의 이름을 따서 뽀삐스라 명명하였습니다. 이름이 다소 구리다는 피드백이 많아서 변경 예정입니다. 모바일로 사용하려고 만든 웹앱 사이트입니다.",
     date: "2025/03/30 ~ 진행중",
     team: "개인",
     images: [
-      "/images/projects/karb/image-sign-up.webp",
-      "/images/projects/karb/image-login.webp",
-      "/images/projects/karb/image-find-id.webp",
+      "/images/projects/ppoppis/image-home.webp",
+      "/images/projects/ppoppis/image-weather.webp",
+      "/images/projects/ppoppis/image-task.webp",
     ],
     keyFeatures: [""],
     skills: [
       {
         skill: "React",
-        content: "정말 열심히 했어요",
+        content:
+          "자바스크립트 기반 UI 라이브러리로, 컴포넌트 단위로 재사용 가능한 사용자 인터페이스를 구축할 수 있습니다.",
+      },
+      {
+        skill: "Next",
+        content:
+          "React 기반의 프레임워크로, 서버사이드 렌더링과 정적 사이트 생성을 지원하여 SEO에 유리하고 퍼포먼스를 향상시킬 수 있습니다.",
+      },
+      {
+        skill: "PWA",
+        content:
+          "웹 애플리케이션을 네이티브 앱처럼 사용할 수 있도록 해주는 기술로, 오프라인 사용, 홈 화면 설치, 푸시 알림 등의 기능을 제공합니다.",
+      },
+      {
+        skill: "Typescript",
+        content:
+          "자바스크립트에 정적 타입을 추가한 언어로, 코드 작성 시 실수를 줄이고 안정성과 유지보수성을 높일 수 있습니다.",
+      },
+      {
+        skill: "TailwindCSS",
+        content:
+          "유틸리티 기반의 CSS 프레임워크로, 클래스 조합만으로 빠르고 효율적인 반응형 UI를 구성할 수 있습니다.",
       },
     ],
     contribution: [
       {
-        title: "디자인 시안 제작 및 UI 설계",
+        title: "날씨 기능",
         content: [
-          "Figma를 활용해 전체 디자인 시안을 총괄하고, 공통 컴포넌트를 분리하여 일관된 UI를 설계했습니다.",
+          "일기예보에 믿음이 사라져서 날씨 api중 무료플랜의 api를 사용하여 오늘의 기본적인 날씨를 볼 수 있게하였습니다.",
+        ],
+      },
+      {
+        title: "할일 기능",
+        content: [
+          "홈트레이닝의 운동 루틴 학습이 부족하여 순서를 적어놓고 좋은 몸을 만들기 위해 만들었습니다.",
+          "요일마다 지정해두는게 좋을듯 하여 리팩토링 예정입니다.",
+        ],
+      },
+      {
+        title: "버스 기능",
+        content: [
+          "자주 타는 버스의 도착여부를 빠르게 알기위해 만들었습니다. 발급 받은 공공데이터 api key의 에러가 있어서 문의중이며 개발중입니다.",
+        ],
+      },
+      {
+        title: "약속 장소 타협 기능",
+        content: [
+          "멀리 있는 친구와의 중간거리를 정확히 측정한 후 좋은 거래뒤에 좋은 만남을 위해 개발예정입니다.",
         ],
       },
     ],
