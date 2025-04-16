@@ -61,14 +61,12 @@ const ProjectModal = () => {
 
   return isShowModal && data ? (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-start text-black overflow-scroll overflow-x-hidden">
-      <div className="absolute top-12 right-24 flex flex-col gap-4">
-        <div className="w-12 h-12 flex justify-center items-center rounded-full bg-bgBlack cursor-pointer">
-          <span
-            onClick={() => dispatch(hideModal())}
-            className="text-3xl text-white"
-          >
-            ✕
-          </span>
+      <div className="fixed top-12 right-24 flex flex-col gap-4">
+        <div
+          onClick={() => dispatch(hideModal())}
+          className="w-12 h-12 flex justify-center items-center rounded-full bg-bgBlack cursor-pointer"
+        >
+          <span className="text-3xl text-white">✕</span>
         </div>
         <div className="w-12 h-12 flex justify-center items-center border border-black rounded-full bg-white cursor-pointer">
           <Image className="w-12 h-12" src={iconGithub} alt="깃허브 아이콘" />

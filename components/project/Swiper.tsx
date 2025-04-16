@@ -63,7 +63,7 @@ const Swiper = ({ images }: SwiperProps) => {
           key={index}
           width={260}
           height={176}
-          className="w-1/4 h-44 bg-blue rounded-xl cursor-pointer"
+          className="w-1/4 h-44 rounded-xl cursor-pointer"
         />
       ))}
       <span
