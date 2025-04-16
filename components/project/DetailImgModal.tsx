@@ -22,7 +22,7 @@ const DetailImgModal = () => {
           src={imageUrl}
           alt="확대 이미지"
           fill
-          quality={90} // 100까지 가능, 보통 90 이상 권장
+          quality={90}
           className="object-contain rounded-xl"
         />
       </div>
