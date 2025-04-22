@@ -29,6 +29,12 @@ module.exports = {
         green: "#6A9955",
         bgBlack: "#1e1e1e",
       },
+      screens: {
+        sm: "360px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1920px",
+      },
     },
   },
   plugins: [],
