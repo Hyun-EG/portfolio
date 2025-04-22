@@ -25,11 +25,11 @@ const EducationBox = () => {
     <div
       id="education"
       ref={eduRef}
-      className="w-full min-h-screen pl-96 bg-bgBlack text-black text-white"
+      className="w-full min-h-screen bg-bgBlack text-black text-white sm:pl-0 xl:pl-96"
     >
       <TitleBox>EDUCATIONS</TitleBox>
       <div
-        className={`pt-12 pr-4 flex gap-4 justify-center items-center transition-opacity duration-[500ms] ${
+        className={`pt-12 flex gap-4 justify-center items-center transition-opacity duration-[500ms] sm:pr-0 lg:pr-4 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
