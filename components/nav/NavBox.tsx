@@ -2,6 +2,7 @@
 
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { Link } from "react-scroll";
 
 const NavBox = () => {
   const isVisible = useSelector((state: RootState) => state.nav.isVisible);
@@ -18,14 +19,52 @@ const NavBox = () => {
         onClick={() => {
           window.scrollTo({ top: 0, behavior: "smooth" });
         }}
-        className="text-3xl cursor-pointer"
+        className="text-3xl font-bold cursor-pointer"
       >
         Intro
       </span>
-      <span className="text-3xl cursor-pointer">Profile</span>
-      <span className="text-3xl cursor-pointer">Projects</span>
-      <span className="text-3xl cursor-pointer">Educations</span>
-      <span className="text-3xl cursor-pointer">Outro</span>
+      <Link
+        to="profile"
+        smooth={true}
+        duration={500}
+        spy={true}
+        activeClass="active"
+        offset={-200}
+        className="group"
+      >
+        <div className="text-3xl font-bold transition-colors duration-500 cursor-pointer group-[.active]:text-blue">
+          Profile
+        </div>
+      </Link>
+      <Link
+        to="project"
+        smooth={true}
+        duration={500}
+        spy={true}
+        activeClass="active"
+        offset={-200}
+        className="group"
+      >
+        <div className="text-3xl font-bold transition-colors duration-500 cursor-pointer group-[.active]:text-blue ">
+          Projects
+        </div>
+      </Link>
+      <Link
+        to="education"
+        smooth={true}
+        duration={500}
+        spy={true}
+        activeClass="active"
+        offset={-200}
+        className="group"
+      >
+        <div className="text-3xl font-bold transition-colors duration-500 cursor-pointer group-[.active]:text-blue">
+          Educations
+        </div>
+      </Link>
+      <Link to="outro" smooth={true} duration={500}>
+        <span className="text-3xl font-bold cursor-pointer">Outro</span>
+      </Link>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { hideNav } from "@/features/nav/navSlice";
 import { observeNav } from "@/utils/observeNav";
+import { Link } from "react-scroll";
 
 const IntroBox = () => {
   const LINE_NUM = Array.from({ length: 7 });
@@ -16,7 +17,7 @@ const IntroBox = () => {
 
   useEffect(() => {
     if (!introRef.current) return;
-    const cleanup = observeNav(introRef.current, 0.1, () =>
+    const cleanup = observeNav(introRef.current, 0.5, () =>
       dispatch(hideNav())
     );
     return cleanup;
@@ -47,7 +48,9 @@ const IntroBox = () => {
             {isShowIntro && (
               <>
                 <span className="text-xl">Run Code &gt;&gt;&gt; </span>
-                <span className="px-10 text-3xl cursor-pointer">▷</span>
+                <Link to="profile" smooth={true} duration={500}>
+                  <span className="px-10 text-3xl cursor-pointer">▷</span>
+                </Link>
               </>
             )}
           </div>
