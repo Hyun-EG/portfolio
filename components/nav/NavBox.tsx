@@ -9,7 +9,7 @@ const NavBox = () => {
 
   return (
     <div
-      className={`fixed left-0 top-0 w-96 h-screen p-5 rounded-r-3xl flex flex-col gap-4 text-white bg-bgBlack z-50 transition-opacity duration-[500ms] ${
+      className={`hidden xl:block fixed left-0 top-0 w-96 h-screen p-5 rounded-r-3xl flex flex-col gap-4 text-white bg-bgBlack z-50 transition-opacity duration-[500ms] ${
         isVisible
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none"

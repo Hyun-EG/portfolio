@@ -22,7 +22,7 @@ const Code = () => {
   }, []);
 
   return (
-    <div className="pl-5 flex flex-col gap-1.5">
+    <div className="flex flex-col pl-5 gap-1.5 sm:text-lg lg:text-2xl">
       <div>
         <span className="text-blue">function</span>{" "}
         <span className="text-olive">introduceMe</span>( ) {"{"}
@@ -52,7 +52,7 @@ const Code = () => {
       <div>
         <span className="text-olive">introduceMe</span>();
       </div>
-      <div className="text-green text-3xl">
+      <div className="text-green sm:text-xl xl:text-3xl">
         {"//"} {displayComment}
       </div>
     </div>
