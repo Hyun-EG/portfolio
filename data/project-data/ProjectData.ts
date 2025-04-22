@@ -4,6 +4,7 @@ import { ProjectDataType } from "@/types/projectDataType";
 export const projectData: ProjectDataType = {
   sellweb: {
     mainColor: "#DB2777",
+    link: "https://github.com/sellwebb/sellweb",
     title: "Sell Web (셀웹)",
     description:
       "Next.js API Routes를 활용한 서버리스 아키텍처 기반의 풀스택 프로젝트입니다. 결제 모듈과 외부 라이브러리 연동, OAuth 기반 인증 및 쿠키 관리, Tailwind CSS를 활용한 UI 구현, 기획부터 Figma 디자인까지 전 과정을 2人에서 경험하며 실전 중심의 역량 강화를 목표로 진행했습니다.",
@@ -103,6 +104,7 @@ export const projectData: ProjectDataType = {
   },
   karb: {
     mainColor: "#006597",
+    link: "https://github.com/Hyun-EG/final-project-ad-queue-AI",
     title: "KARB (한국광고 심의기관)",
     description:
       "해당 프로젝트는 뉴로플로우 측과 연계하여 진행한 기업연계 프로젝트입니다. AI 도입 이전 단계에서 기업 측이 전달한 요구사항을 바탕으로, 기획자, 디자이너, 프론트엔드, 백엔드 등 총 12인의 팀원이 협업하여 개발을 진행하였습니다. 회사 내부에서 사용할 예정인 웹앱 형태의 사이트로, 기존 수작업으로 이뤄지던 작업 배분을 자동화하고, 직원 관리 및 할당량을 시각화하여 대시보드에서 실시간으로 확인할 수 있는 기능을 제공합니다.",
@@ -220,6 +222,7 @@ export const projectData: ProjectDataType = {
   },
   aircnc: {
     mainColor: "#FF385C",
+    link: "https://github.com/Hyun-EG/mini-project-aircnc",
     title: "Aircnc",
     description:
       "에어비엔비를 레퍼런스로 참고하여 제작한 커스텀 에어씨엔씨입니다. 선택한 지역의 근처 숙소 예약 기능 제공합니다.",
@@ -311,6 +314,7 @@ export const projectData: ProjectDataType = {
   },
   devtube: {
     mainColor: "#F90103",
+    link: "https://github.com/Hyun-EG/TP-devtube",
     title: "Devtube",
     description:
       "유튜브 크리에이터를 위한 채널 관리 플랫폼입니다. 시스템 오류로 인한 정정 신청, 문의 접수는 물론 스케줄 관리와 수익 내역 확인 기능을 제공합니다.",
@@ -399,6 +403,7 @@ export const projectData: ProjectDataType = {
   },
   intranet: {
     mainColor: "#ED234B",
+    link: "https://github.com/Hyun-EG/TP-fastcampus-intranet",
     title: "Intranet",
     description:
       "부트캠프 수강생들이 출석 시스템에서 겪는 불편함을 해소하고자 만든 토이 프로젝트입니다. 수강생 입장에서 ‘이런 서비스가 있으면 좋겠다’는 마음으로 기획하고 제작한 컨셉 기반의 웹 애플리케이션입니다.",
@@ -466,6 +471,7 @@ export const projectData: ProjectDataType = {
   },
   ppoppis: {
     mainColor: "#020202",
+    link: "https://github.com/Hyun-EG/ppoppi",
     title: "PPOPPIS",
     description:
       "저만의 쟈비스가 필요하여 과거에 키우던 뽀삐의 이름을 따서 뽀삐스라 명명하였습니다. 이름이 다소 구리다는 피드백이 많아서 변경 예정입니다. 모바일로 사용하려고 만든 웹앱 사이트입니다.",

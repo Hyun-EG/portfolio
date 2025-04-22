@@ -1,6 +1,7 @@
 // projectDataType.ts
 export interface ProjectItem {
   mainColor: string;
+  link: string;
   title: string;
   description: string;
   date: string;

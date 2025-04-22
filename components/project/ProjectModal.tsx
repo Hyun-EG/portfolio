@@ -69,7 +69,9 @@ const ProjectModal = () => {
           <span className="text-3xl text-white">✕</span>
         </div>
         <div className="w-12 h-12 flex justify-center items-center border border-black rounded-full bg-white cursor-pointer">
-          <Image className="w-12 h-12" src={iconGithub} alt="깃허브 아이콘" />
+          <a href={data.link} target="blink">
+            <Image className="w-12 h-12" src={iconGithub} alt="깃허브 아이콘" />
+          </a>
         </div>
       </div>
       <div className="w-full h-auto flex flex-col mx-64 pb-12 bg-white rounded-lg shadow-xl">
