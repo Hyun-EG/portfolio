@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { showNav } from "@/features/nav/navSlice";
 import { observeNav } from "@/utils/observeNav";
@@ -11,28 +11,38 @@ const EducationBox = () => {
   const eduRef = useRef(null);
   const dispatch = useDispatch();
 
+  const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     if (!eduRef.current) return;
-    const cleanup = observeNav(eduRef.current, 0.9, () => dispatch(showNav()));
-    return cleanup;
+    observeNav(eduRef.current, 0.5, () => {
+      dispatch(showNav());
+      setTimeout(() => setIsVisible(true), 10);
+    });
   }, [dispatch]);
 
   return (
     <div
+      id="education"
       ref={eduRef}
       className="w-full min-h-screen pl-96 bg-bgBlack text-black text-white"
     >
       <TitleBox>EDUCATIONS</TitleBox>
-      <div className="pt-12 pr-4 flex gap-4 justify-center items-center">
+      <div
+        className={`pt-12 pr-4 flex gap-4 justify-center items-center transition-opacity duration-[500ms] ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <Card
           title="패스트캠퍼스"
           content="프론트엔드 과정 부트캠프 수료"
           date="2024.02-2024.09 (약 8개월)"
           options={[
             "프론트엔드 과정 커리큘럼 교육이수",
-            "매주 스터디그룹 참여하여 문답식 토론 및 회고",
+            "스터디그룹에 적극적으로 참여하여 문답식 토론 및 회고",
             "3D 메타버스 플랫폼을 이용하여 다양한 포지션과 커뮤니케이션 진행 및 프로젝트 회의",
             "매주 현직자님과 멘토링 및 코드리뷰 진행",
+            "협업 프로젝트를 통한 전문성 강화",
             "기업 연계 프로젝트 진행",
           ]}
         />

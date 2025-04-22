@@ -12,19 +12,40 @@ import Badge from "../common/Badge";
 import ProjectModal from "./ProjectModal";
 import { useDispatch } from "react-redux";
 import { setSelectedProject } from "../../features/selectedProject/selectedProjectSlice";
+import { useEffect, useRef, useState } from "react";
+import { observeNav } from "@/utils/observeNav";
+import { showNav } from "@/features/nav/navSlice";
 
 const ProjectBox = () => {
   const dispatch = useDispatch();
+  const navRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleCardClick = (projectName: string) => {
     dispatch(setSelectedProject(projectName));
   };
 
+  useEffect(() => {
+    if (!navRef.current) return;
+    observeNav(navRef.current, 0.1, () => {
+      dispatch(showNav());
+      setTimeout(() => setIsVisible(true), 10);
+    });
+  }, [dispatch]);
+
   return (
-    <div className="w-full min-h-screen pl-96 py-12 bg-bgBlack text-white">
+    <div
+      ref={navRef}
+      id="project"
+      className="w-full min-h-screen pl-96 py-12 bg-bgBlack text-white"
+    >
       <TitleBox>PROJECTS</TitleBox>
       <ProjectModal />
-      <div className="w-full flex flex-col px-12 py-4">
+      <div
+        className={`"w-full flex flex-col px-12 py-4" transition-opacity duration-[500ms] ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <div className="flex flex-wrap gap-4">
           <Card
             projectImg={imgSellweb}
