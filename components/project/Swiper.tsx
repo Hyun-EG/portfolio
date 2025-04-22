@@ -9,7 +9,7 @@ import { showModal } from "@/features/detailImageModal/detailImageModalSlice";
 
 const Swiper = ({ images }: SwiperProps) => {
   const [startIndex, setStartIndex] = useState(0);
-  const [currentLastIndex, setCurrentLastIndex] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(3); // ✨
   const [updateArr, setUpdateArr] = useState<string[]>([]);
   const [prevDisabled, setPrevDisabled] = useState(false);
   const [lastDisabled, setLastDisabled] = useState(false);
@@ -23,25 +23,38 @@ const Swiper = ({ images }: SwiperProps) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const newArr = imageArr.slice(startIndex, currentLastIndex);
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setVisibleCount(1);
+      } else {
+        setVisibleCount(3);
+      }
+    };
+
+    handleResize(); // 초기값 설정
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const newArr = imageArr.slice(startIndex, startIndex + visibleCount);
     setUpdateArr(newArr);
-  }, [startIndex, currentLastIndex, imageArr]);
+  }, [startIndex, visibleCount, imageArr]);
 
   useEffect(() => {
     setPrevDisabled(startIndex <= 0);
-    setLastDisabled(currentLastIndex >= imageArr.length);
-  }, [startIndex, currentLastIndex, imageArr]);
+    setLastDisabled(startIndex + visibleCount >= imageArr.length);
+  }, [startIndex, visibleCount, imageArr]);
 
   const prevPaging = () => {
     if (startIndex <= 0) return;
     setStartIndex((prev) => prev - 1);
-    setCurrentLastIndex((prev) => prev - 1);
   };
 
   const lastPaging = () => {
-    if (currentLastIndex >= lastIndex) return;
+    if (startIndex + visibleCount >= lastIndex) return;
     setStartIndex((prev) => prev + 1);
-    setCurrentLastIndex((prev) => prev + 1);
   };
 
   return (
@@ -63,7 +76,7 @@ const Swiper = ({ images }: SwiperProps) => {
           key={index}
           width={260}
           height={176}
-          className="w-1/4 h-44 rounded-xl cursor-pointer"
+          className="sm:3/4 xl:w-1/4 h-44 rounded-xl cursor-pointer"
         />
       ))}
       <span

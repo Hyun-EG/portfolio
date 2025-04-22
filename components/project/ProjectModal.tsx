@@ -61,36 +61,42 @@ const ProjectModal = () => {
 
   return isShowModal && data ? (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-start text-black overflow-scroll overflow-x-hidden">
-      <div className="fixed top-12 right-24 flex flex-col gap-4">
+      <div className="sm:absolute xl:fixed sm:top-3 xl:top-12 sm:right-3 xl:right-24 flex flex-col gap-4">
         <div
           onClick={() => dispatch(hideModal())}
-          className="w-12 h-12 flex justify-center items-center rounded-full bg-bgBlack cursor-pointer"
+          className="sm:w-8 xl:w-12 sm:h-8 xl:h-12 flex justify-center items-center rounded-full bg-black cursor-pointer"
         >
-          <span className="text-3xl text-white">✕</span>
+          <span className="sm:text-xl xl:text-3xl text-white">✕</span>
         </div>
-        <div className="w-12 h-12 flex justify-center items-center border border-black rounded-full bg-white cursor-pointer">
+        <div className="sm:w-8 xl:w-12 sm:h-8 xl:h-12 flex justify-center items-center border border-black rounded-full bg-white cursor-pointer">
           <a href={data.link} target="blink">
-            <Image className="w-12 h-12" src={iconGithub} alt="깃허브 아이콘" />
+            <Image
+              className="sm:w-8 xl:w-12 sm:h-8 xl:h-12"
+              src={iconGithub}
+              alt="깃허브 아이콘"
+            />
           </a>
         </div>
       </div>
-      <div className="w-full h-auto flex flex-col mx-64 pb-12 bg-white rounded-lg shadow-xl">
+      <div className="w-full h-auto flex flex-col sm:mx-0 xl:mx-64 pb-12 bg-white rounded-lg shadow-xl">
         <div
           className="py-8 text-center rounded-t-lg"
           style={{ backgroundColor: data.mainColor }}
         >
           <span className="text-white text-3xl">{data.title}</span>
         </div>
-        <div className="h-full px-44">
+        <div className="w-full h-full sm:px-4 xl:px-44">
           <div className="py-4 text-center">
-            <div className="py-2 font-bold">{data.description}</div>
+            <div className="py-2 sm:text-xs xl:text-base font-bold">
+              {data.description}
+            </div>
             <div>
-              <span className="p-1 rounded-lg bg-olive font-bold">
+              <span className="p-1 rounded-lg bg-olive font-bold sm:text-xs xl:text-base">
                 {data.date}
               </span>
             </div>
             <div className="py-2">
-              <span className="p-1 rounded-lg bg-purple font-bold">
+              <span className="p-1 rounded-lg bg-purple font-bold sm:text-xs xl:text-base">
                 {data.team}
               </span>
             </div>
@@ -100,7 +106,9 @@ const ProjectModal = () => {
           </div>
           <div className="py-2">
             <div className="pb-2">
-              <span className="font-bold text-2xl">주요 기능</span>
+              <span className="font-bold sm:text-xl xl:text-2xl">
+                주요 기능
+              </span>
             </div>
             <div>
               {data.keyFeatures.map((item, index) => (
@@ -113,7 +121,9 @@ const ProjectModal = () => {
           </div>
           <div className="py-2">
             <div className="pb-2">
-              <span className="font-bold text-2xl">기술 및 스택</span>
+              <span className="font-bold sm:text-xl xl:text-2xl">
+                기술 및 스택
+              </span>
             </div>
             <div>
               {data.skills.map((item, index) => (
@@ -138,7 +148,7 @@ const ProjectModal = () => {
           </div>
           <div className="py-2">
             <div className="pb-2">
-              <span className="font-bold text-2xl">기여도</span>
+              <span className="font-bold sm:text-xl xl:text-2xl">기여도</span>
             </div>
             <div>
               {data.contribution.map((item, index) => (

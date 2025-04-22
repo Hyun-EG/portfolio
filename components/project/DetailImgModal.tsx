@@ -11,7 +11,7 @@ const DetailImgModal = () => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-      <div className="relative w-2/3 h-4/5 bg-white rounded-xl">
+      <div className="relative sm:w-full xl:w-2/3 sm:h-1/3 xl:h-4/5 bg-white rounded-xl">
         <span
           onClick={() => dispatch(hideModal())}
           className="absolute flex justify-center items-center top-4 right-4 rounded-full w-10 h-10 bg-black text-white cursor-pointer z-10"
