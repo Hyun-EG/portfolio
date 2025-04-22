@@ -26,9 +26,9 @@ const IntroBox = () => {
   return (
     <div
       ref={introRef}
-      className="w-full h-screen flex flex-col justify-center items-center px-4"
+      className="h-screen flex flex-col justify-center items-center px-4"
     >
-      <div className="w-full sm:w-[400px] h-[500px] md:w-[768px] h-[700px] lg:w-[1024px] h-[800px] xl:w-[1480px] h-[900px] rounded-tl-3xl flex flex-col bg-bgBlack">
+      <div className="w-full sm:w-[400px] h-[90%] xl:w-[1480px] xl:h-[900px] rounded-tl-3xl flex flex-col bg-bgBlack">
         <div className="flex sm:h-16 xl:h-[64px] ">
           {isShowIntro && (
             <div className="flex justify-center items-center bg-bgBlack sm: w-84 rounded-tl-2xl xl: w-[200px] pl-7 gap-3 rounded-tl-3xl">

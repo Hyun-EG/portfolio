@@ -37,7 +37,7 @@ const ProjectBox = () => {
     <div
       ref={navRef}
       id="project"
-      className="w-full min-h-screen pl-96 py-12 bg-bgBlack text-white"
+      className="w-full min-h-screen py-12 bg-bgBlack text-white sm:pl-0 lg:pl-96"
     >
       <TitleBox>PROJECTS</TitleBox>
       <ProjectModal />
