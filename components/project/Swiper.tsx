@@ -9,7 +9,7 @@ import { showModal } from "@/features/detailImageModal/detailImageModalSlice";
 
 const Swiper = ({ images }: SwiperProps) => {
   const [startIndex, setStartIndex] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(3); // ✨
+  const [visibleCount, setVisibleCount] = useState(3);
   const [updateArr, setUpdateArr] = useState<string[]>([]);
   const [prevDisabled, setPrevDisabled] = useState(false);
   const [lastDisabled, setLastDisabled] = useState(false);
@@ -25,14 +25,14 @@ const Swiper = ({ images }: SwiperProps) => {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width < 640) {
+      if (width < 1000) {
         setVisibleCount(1);
       } else {
         setVisibleCount(3);
       }
     };
 
-    handleResize(); // 초기값 설정
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
