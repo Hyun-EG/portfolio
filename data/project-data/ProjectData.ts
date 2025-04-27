@@ -1,19 +1,22 @@
-// ProjectData.ts
 import { ProjectDataType } from "@/types/projectDataType";
 
 export const projectData: ProjectDataType = {
   sellweb: {
     mainColor: "#DB2777",
-    link: "https://github.com/sellwebb/sellweb",
+    link: "https://github.com/Hyun-EG/SP-sellweb",
     title: "Sell Web (셀웹)",
     description:
       "Next.js API Routes를 활용한 서버리스 아키텍처 기반의 풀스택 프로젝트입니다. 결제 모듈과 외부 라이브러리 연동, OAuth 기반 인증 및 쿠키 관리, Tailwind CSS를 활용한 UI 구현, 기획부터 Figma 디자인까지 전 과정을 2人에서 경험하며 실전 중심의 역량 강화를 목표로 진행했습니다.",
     date: "2025.01.07 ~ 진행중",
     team: "FE 2명",
     images: [
-      "/images/projects/sellweb/home.PNG",
-      "/images/projects/sellweb/login.PNG",
-      "/images/projects/sellweb/signup.PNG",
+      "/images/projects/sellweb/image-login.webp",
+      "/images/projects/sellweb/image-signup.webp",
+      "/images/projects/sellweb/image-temp.webp",
+      "/images/projects/sellweb/image-temp-detail.webp",
+      "/images/projects/sellweb/image-ask.webp",
+      "/images/projects/sellweb/image-admin-project.webp",
+      "/images/projects/sellweb/image-admin.webp",
     ],
     keyFeatures: [
       "소셜 로그인 및 자체 인증 시스템 병행 (Naver SMTP 연동)",
@@ -465,75 +468,6 @@ export const projectData: ProjectDataType = {
         title: "자료실 스와이퍼 기능 구현",
         content: [
           "Swiper 라이브러리를 사용하여 다양한 자료를 손쉽게 탐색할 수 있도록 개발",
-        ],
-      },
-    ],
-  },
-  ppoppis: {
-    mainColor: "#020202",
-    link: "https://github.com/Hyun-EG/ppoppi",
-    title: "PPOPPIS",
-    description:
-      "저만의 쟈비스가 필요하여 과거에 키우던 뽀삐의 이름을 따서 뽀삐스라 명명하였습니다. 이름이 다소 구리다는 피드백이 많아서 변경 예정입니다. 모바일로 사용하려고 만든 웹앱 사이트입니다.",
-    date: "2025/03/30 ~ 진행중",
-    team: "개인",
-    images: [
-      "/images/projects/ppoppis/image-home.webp",
-      "/images/projects/ppoppis/image-weather.webp",
-      "/images/projects/ppoppis/image-task.webp",
-    ],
-    keyFeatures: [""],
-    skills: [
-      {
-        skill: "React",
-        content:
-          "자바스크립트 기반 UI 라이브러리로, 컴포넌트 단위로 재사용 가능한 사용자 인터페이스를 구축할 수 있습니다.",
-      },
-      {
-        skill: "Next",
-        content:
-          "React 기반의 프레임워크로, 서버사이드 렌더링과 정적 사이트 생성을 지원하여 SEO에 유리하고 퍼포먼스를 향상시킬 수 있습니다.",
-      },
-      {
-        skill: "PWA",
-        content:
-          "웹 애플리케이션을 네이티브 앱처럼 사용할 수 있도록 해주는 기술로, 오프라인 사용, 홈 화면 설치, 푸시 알림 등의 기능을 제공합니다.",
-      },
-      {
-        skill: "Typescript",
-        content:
-          "자바스크립트에 정적 타입을 추가한 언어로, 코드 작성 시 실수를 줄이고 안정성과 유지보수성을 높일 수 있습니다.",
-      },
-      {
-        skill: "TailwindCSS",
-        content:
-          "유틸리티 기반의 CSS 프레임워크로, 클래스 조합만으로 빠르고 효율적인 반응형 UI를 구성할 수 있습니다.",
-      },
-    ],
-    contribution: [
-      {
-        title: "날씨 기능",
-        content: [
-          "일기예보에 믿음이 사라져서 날씨 api중 무료플랜의 api를 사용하여 오늘의 기본적인 날씨를 볼 수 있게하였습니다.",
-        ],
-      },
-      {
-        title: "할일 기능",
-        content: [
-          "홈트레이닝의 운동 루틴 학습이 부족하여 순서를 적어놓고 좋은 몸을 만들기 위해 만들었습니다.",
-          "요일마다 지정해두는게 좋을듯 하여 리팩토링 예정입니다.",
-        ],
-      },
-      {
-        title: "버스 기능",
-        content: [
-          "자주 타는 버스의 도착여부를 빠르게 알기위해 만들었습니다. 발급 받은 공공데이터 api key의 에러가 있어서 문의중이며 개발중입니다.",
-        ],
-      },
-      {
-        title: "약속 장소 타협 기능",
-        content: [
-          "멀리 있는 친구와의 중간거리를 정확히 측정한 후 좋은 거래뒤에 좋은 만남을 위해 개발예정입니다.",
         ],
       },
     ],

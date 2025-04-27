@@ -7,7 +7,6 @@ import imgDevtube from "../../public/images/image-devtube.webp";
 import imgIntranet from "../../public/images/image-intranet.webp";
 import imgKarb from "../../public/images/image-karb.webp";
 import imgSellweb from "../../public/images/image-sellweb.webp";
-import imgPpoppis from "../../public/images/image-ppoppis.webp";
 import Badge from "../common/Badge";
 import ProjectModal from "./ProjectModal";
 import { useDispatch } from "react-redux";
@@ -111,18 +110,6 @@ const ProjectBox = () => {
               </div>
             }
             onClick={() => handleCardClick("intranet")}
-          />
-          <Card
-            projectImg={imgPpoppis}
-            projectName="뽀삐스"
-            projectDesc="저만의 쟈비스입니다."
-            badges={
-              <div className="flex items-center gap-1">
-                <Badge content="개인" color="olive" />
-                <Badge content="토이" color="orange" />
-              </div>
-            }
-            onClick={() => handleCardClick("ppoppis")}
           />
         </div>
       </div>
